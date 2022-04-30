@@ -12,6 +12,7 @@ import lombok.ToString;
 @EqualsAndHashCode
 public class FetchMovies {
 
-        private String name;
-        private String date;
+    private String name;
+    private String date;
+    private MovieReview movieReview;
 }

@@ -6,15 +6,13 @@ import lombok.Getter;
 import lombok.Setter;
 import lombok.ToString;
 
-import java.util.List;
-
 @Getter
 @Setter
-@EqualsAndHashCode
 @ToString
-public class MovieDetails {
-    private String name;
-    private String date;
-    private List<MovieReview> movieReview;
+@EqualsAndHashCode
+public class MovieReview {
 
+    private String name;
+    private String description;
+    private String rating;
 }
