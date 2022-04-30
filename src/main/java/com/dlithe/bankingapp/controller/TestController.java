@@ -23,13 +23,14 @@ public class TestController {
         return testService.registerNewUser(instagramSignUp);
     }
 
-//    @PostMapping("add-movies")
-//    public String addMovies(@RequestBody MovieDetails movieDetails){
-//        return testService.addMovies(movieDetails);
-//    }
+    @PostMapping("add-movies")
+    public String addMovies(@RequestBody MovieDetails movieDetails){
+        return testService.addMovies(movieDetails);
+    }
 
     @GetMapping("get-movie-details/{moviesId}")
     public MovieDetails fetchMovieDetails(@PathVariable int moviesId){
+
         return testService.getMovieDetails(moviesId);
     }
 }
