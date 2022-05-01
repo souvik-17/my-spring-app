@@ -33,5 +33,11 @@ public class TestController {
 
         return testService.getMovieDetails(moviesId);
     }
+
+    @GetMapping("fetch-movie-details/{movieId}/{movieName}")
+        public MovieDetails fetchMovieDetailsByMovieName(@PathVariable int movieId, @PathVariable String movieName){
+        return testService.fetchMovieDetailsByMovieName(movieId,movieName);
+    }
+
 }
 

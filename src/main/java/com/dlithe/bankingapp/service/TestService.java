@@ -14,4 +14,6 @@ public interface TestService {
     String addMovies(MovieDetails movieDetails);
 
     MovieDetails getMovieDetails(int moviesId);
+
+    MovieDetails fetchMovieDetailsByMovieName(int movieId,String movieName);
 }
