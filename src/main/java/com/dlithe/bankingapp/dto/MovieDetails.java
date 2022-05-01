@@ -13,6 +13,7 @@ import java.util.List;
 @EqualsAndHashCode
 @ToString
 public class MovieDetails {
+    private int id;
     private String name;
     private String date;
     private List<MovieReview> movieReview;

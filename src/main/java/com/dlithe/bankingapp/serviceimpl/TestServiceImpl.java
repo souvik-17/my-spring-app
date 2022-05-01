@@ -82,6 +82,20 @@ public class TestServiceImpl implements TestService {
         return movieDetails;
     }
 
+    @Override
+    public MovieDetails fetchMovieDetailsByMovieName(int id,String movieName) {
+
+        MovieDetails movieDetails = new MovieDetails();
+
+        Movies movies = moviesDAO.findByMovieNameAndId(id,movieName);
+
+        movieDetails.setId(movies.getId());
+        movieDetails.setName(movies.getName());
+        movieDetails.setDate(movies.getDate());
+
+        return movieDetails;
+    }
+
 
 }
 
