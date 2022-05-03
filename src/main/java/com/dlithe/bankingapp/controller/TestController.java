@@ -1,10 +1,13 @@
 package com.dlithe.bankingapp.controller;
 
 
+import com.dlithe.bankingapp.dto.BaseResponse;
 import com.dlithe.bankingapp.dto.InstagramSignUp;
 import com.dlithe.bankingapp.dto.MovieDetails;
 import com.dlithe.bankingapp.service.TestService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 @RestController
@@ -33,11 +36,15 @@ public class TestController {
 
         return testService.getMovieDetails(moviesId);
     }
-
-    @GetMapping("fetch-movie-details/{movieId}/{movieName}")
-        public MovieDetails fetchMovieDetailsByMovieName(@PathVariable int movieId, @PathVariable String movieName){
-        return testService.fetchMovieDetailsByMovieName(movieId,movieName);
-    }
+//
+//    @GetMapping("fetch-movie-details/{movieId}")
+//        public ResponseEntity<BaseResponse> fetchMovieDetailsByMovieId (@PathVariable int movieId){
+//        if(movieId==0 || String.valueOf(movieId)==null){
+//            return new ResponseEntity<BaseResponse>(new BaseResponse("Movie ID can not be zero or Null",HttpStatus.BAD_REQUEST,HttpStatus.BAD_REQUEST.value(),null));
+//        }
+//
+//        return testService.fetchMovieDetailsByMovieName(movieId);
+//    }
 
 }
 

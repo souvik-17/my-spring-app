@@ -1,6 +1,7 @@
 package com.dlithe.bankingapp.service;
 
 
+import com.dlithe.bankingapp.dto.BaseResponse;
 import com.dlithe.bankingapp.dto.InstagramSignUp;
 import com.dlithe.bankingapp.dto.MovieDetails;
 import org.springframework.stereotype.Component;
@@ -15,5 +16,5 @@ public interface TestService {
 
     MovieDetails getMovieDetails(int moviesId);
 
-    MovieDetails fetchMovieDetailsByMovieName(int movieId,String movieName);
+//    ResponseEntity<BaseResponse> fetchMovieDetailsByMovieId(int movieId);
 }

@@ -1,13 +1,11 @@
 package com.dlithe.bankingapp.serviceimpl;
 
-import com.dlithe.bankingapp.dto.FetchMovies;
-import com.dlithe.bankingapp.dto.InstagramSignUp;
-import com.dlithe.bankingapp.dto.MovieDetails;
-import com.dlithe.bankingapp.dto.MovieReview;
+import com.dlithe.bankingapp.dto.*;
 import com.dlithe.bankingapp.entity.Movies;
 import com.dlithe.bankingapp.repository.MoviesDAO;
 import com.dlithe.bankingapp.service.TestService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpStatus;
 import org.springframework.stereotype.Service;
 
 import java.util.ArrayList;
@@ -82,19 +80,52 @@ public class TestServiceImpl implements TestService {
         return movieDetails;
     }
 
-    @Override
-    public MovieDetails fetchMovieDetailsByMovieName(int id,String movieName) {
+//    @Override
+//    public ResponseEntity<BaseResponse> fetchMovieDetailsByMovieId(int movieId) {
+//        BaseResponse baseResponse = new BaseResponse();
+//        MovieDetails movieDetails = new MovieDetails();
+//
+//        Optional<Movies> movies = moviesDAO.findById(id);
+//
+//        if(!movies.isPresent()){
+//            baseResponse.setMessage("Movies for the given ID is not found");
+//            baseResponse.setHttpStatus(HttpStatus.NOT_FOUND);
+//            baseResponse.setHttpStatusCode(HttpStatus.NOT_FOUND.value());
+//            baseResponse.setResponse(movieDetails);
+//        }
+//
+//        Movies moviesData = movies.get();
+//
+//        movieDetails.setId(moviesData.getId());
+//        movieDetails.setName(moviesData.getName());
+//        movieDetails.setDate(moviesData.getDate());
+//
+//        return baseResponse;
+//    }
 
-        MovieDetails movieDetails = new MovieDetails();
-
-        Movies movies = moviesDAO.findByMovieNameAndId(id,movieName);
-
-        movieDetails.setId(movies.getId());
-        movieDetails.setName(movies.getName());
-        movieDetails.setDate(movies.getDate());
-
-        return movieDetails;
-    }
+//    @Override
+//    public ResponseEntity<BaseResponse> fetchMovieDetailsByMovieID(int id) {
+//
+//        BaseResponse baseResponse = new BaseResponse();
+//        MovieDetails movieDetails = new MovieDetails();
+//
+//        Optional<Movies> movies = moviesDAO.findById(id);
+//
+//        if(!movies.isPresent()){
+//            baseResponse.setMessage("Movies for the given ID is not found");
+//            baseResponse.setHttpStatus(HttpStatus.NOT_FOUND);
+//            baseResponse.setHttpStatusCode(HttpStatus.NOT_FOUND.value());
+//            baseResponse.setResponse(movieDetails);
+//        }
+//
+//        Movies moviesData = movies.get();
+//
+//        movieDetails.setId(moviesData.getId());
+//        movieDetails.setName(moviesData.getName());
+//        movieDetails.setDate(moviesData.getDate());
+//
+//        return movieDetails;
+//    }
 
 
 }
